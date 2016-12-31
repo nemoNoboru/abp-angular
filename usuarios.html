@@ -1,0 +1,43 @@
+<section ng-controller='usuariosCtrl as $ctrl' >
+  <div class="content">
+    <header>
+      <h1>Mis usuarios</h1>
+    </header>
+    <div><button ng-click='tcrearUsuario()'>Crear usuario <i class="fa fa-plus-square-o" aria-hidden="true"></i> </button></div>
+      <div ng-hide='tuser'>
+        <input type='text' ng-model='newuserEmail' placeholder="Email del nuevo usuario"/>
+        <input type='text' ng-model='newuserPass' placeholder="Pass del nuevo usuario"/>
+        <button ng-click='crearUsuario()'>Guardar</button>
+      </div>
+      <hr/>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Peso</th>
+            <th>Tipo</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='user in users'>
+            <td>{{user.nombre}}</td>
+            <td>{{user.edad}}</td>
+            <td>{{user.peso}}</td>
+            <td><div class="select-wrapper">
+              <select ng-model='user.tipo' ng-change='save(user)'>
+                <option value="PEF"> PEF</option>
+                <option value="TDU"> TDU</option>
+                <option value="ADMIN"> Adminstador </option>
+                <option value="TRAINER"> Entrenador </option>
+              </select>
+            </div></td>
+            <td><button ng-click='remove(user)'>Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

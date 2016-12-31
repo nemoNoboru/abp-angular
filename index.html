@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html ng-app='app'>
+	<head>
+		<title>Zyzz</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Angular -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+		<!-- AngularFire -->
+		<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyDhvEzTkUUpSuISjdcvm0ih2_jllyE_5Vc",
+		    authDomain: "tswtest-91913.firebaseapp.com",
+		    databaseURL: "https://tswtest-91913.firebaseio.com",
+		    storageBucket: "tswtest-91913.appspot.com",
+		    messagingSenderId: "538419876627"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" >
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Zyzz</strong></a>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+								<div ng-view></div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href='#perfil'>Mi Perfil</a></li>
+										<li><a href="#usuarios">Gestion de Usuarios</a></li>
+										<li><a href="elements.html">Gestion de Actividades</a></li>
+										<li><a href="#">Gestion de Ejercicios</a></li>
+										<li><a href="#">Gestion de entrenamientos</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Informacion de contacto</h2>
+									</header>
+									<p>Polideportivo Uvigo</p>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
+										<li class="fa-phone">(000) 000-0000</li>
+										<li class="fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Felipe Vieira. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/custom.js"></script>
+			<script src="assets/js/loginComponent.js"></script>
+			<script src="assets/js/perfilComponent.js"></script>
+			<script src="assets/js/usuariosComponent.js"></script>
+
+	</body>
+</html>

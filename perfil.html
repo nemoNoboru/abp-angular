@@ -1,0 +1,22 @@
+<!-- Mi perfil -->
+<section ng-controller='perfilCtrl as $ctrl' >
+  <div class="content">
+    <header>
+      <h1>Mi Perfil</h1> <button ng-click='tEdit()'>Editar <i class="fa fa-pencil" aria-hidden="true"></i></button>
+      <div class="row uniform">
+        <div class="6u 12u$(xsmall)">
+          <h2>Nombre: {{O.nombre}}</h2>
+          <input ng-hide='edit' type="text" ng-model='O.nombre' placeholder="Nombre" />
+        </div>
+        <div class="6u$ 12u$(xsmall)">
+          <h2>Peso: {{O.peso}}</h2>
+          <input ng-hide='edit'type="text"  ng-model='O.peso' placeholder="Peso" />
+        </div>
+        <div class="6u$ 12u$(xsmall)">
+          <h2>Edad: {{O.edad}}</h2>
+          <input ng-hide='edit' type="text"  ng-model='O.edad' placeholder="Edad" />
+        </div>
+      </div><br/>
+    </header>
+  </div>
+</section>

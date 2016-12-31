@@ -1,0 +1,18 @@
+<section id="banner">
+  <div class="content">
+    <header>
+      <h1>Logearse</h1>
+      <div class="row uniform">
+        <div class="6u 12u$(xsmall)">
+          <input type="email" ng-model='user' placeholder="Email" />
+        </div>
+        <div class="6u$ 12u$(xsmall)">
+          <input type="password"  ng-model='pass' placeholder="Password" />
+        </div>
+      </div><br/>
+      <h2 ng-show="error"> {{error}}</h2>
+      <button ng-click='login()'>Login</button><br/>
+      Si aun no tiene una cuenta hable con el administrador del gimnasio
+    </header>
+  </div>
+</section>
