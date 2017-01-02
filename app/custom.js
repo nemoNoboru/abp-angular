@@ -3,15 +3,19 @@ var app = angular.module("app",["ngRoute","firebase"]);
 app.config(function($routeProvider){
   $routeProvider
   .when('/',{
-    templateUrl: 'login.html',
+    templateUrl: 'login/login.html',
     controller: 'loginCtrl'
   })
   .when('/perfil',{
-    templateUrl: 'perfil.html',
+    templateUrl: 'perfil/perfil.html',
     controller: 'perfilCtrl'
   })
   .when('/usuarios',{
-    templateUrl: 'usuarios.html',
+    templateUrl: 'usuarios/usuarios.html',
     controller: 'usuariosCtrl'
+  })
+  .when('/actividades',{
+    templateUrl: 'actividades/actividades.html',
+    controller: 'actividadesCtrl'
   });
 });
