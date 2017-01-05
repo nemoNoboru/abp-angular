@@ -1,0 +1,54 @@
+<section ng-controller='tablaCtrl as $ctrl'>
+  <header>
+    <h1> Gestion de tablas de ejercicios </h1>
+  </header>
+
+  <h2>Crear nueva tabla </h2>
+  <div class="row uniform"/>
+    <div class='6u 12u$(xsmall)'>
+      <input type="text" ng-model='t.nombre' placeholder="Nombre de la tabla"/>
+    </div>
+  </div>
+  <br/>
+  <button ng-click='tablas.$add(t)'>Crear Tabla</button>
+  <hr/>
+
+  <h2>Selecionar tabla a modificar</h2>
+  <select ng-model='active' ng-change='reload(active)'>
+    <option ng-repeat='a in tablas' value="{{a.$id}}">{{a.nombre}}</option>
+  </select>
+  <hr/>
+
+  <h2>Selecionar ejercicio a anadir</h2>
+  <select ng-model='aejercicio'>
+    <option ng-repeat='a in ejercicios' value="{{a.$id}}">{{a.nombre}}</option>
+  </select>
+  <br/>
+  <button ng-click='agregar(aejercicio)'>Anadir ejercicio</button>
+
+  <hr/>
+  <h2>{{active.nombre}}</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Peso</th>
+          <th>Repeticiones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='a in activeejercicios'>
+          <td>{{a.nombre}}</td>
+          <td>{{a.descripcion}}</td>
+          <td>{{a.peso}}</td>
+          <td>{{a.repeticiones}}</td>
+
+          <td><button ng-click='activeejercicios.$remove(a)'>Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
