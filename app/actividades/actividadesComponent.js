@@ -1,22 +1,27 @@
-app.controller('actividadesCtrl',["$scope","$firebaseArray",function($scope,$firebaseArray) {
+app.service('Actividades',['$firebaseArray',function($firebaseArray){
   var ref = firebase.database().ref().child('activities');
-  $scope.activities = $firebaseArray(ref);
+  this.activities = $firebaseArray(ref);
+  
+  this.saveActivo = function() {
+    this.actividades.$save(this.activo);
+  }
+}]);
+
+
+app.controller('actividadesCtrl',["$scope","Actividades",function($scope,Actividades) {
+
+  $scope.actividades = Actividades;
   $scope.thide = true;
 
   $scope.fthide = function(){
     $scope.thide = !$scope.thide;
   }
 
-  $scope.addActivity = function(act) {
-    $scope.activities.$add(act);
+  $scope.setActivo = function(a){
+    Actividades.activo = a;
   }
+}]);
 
-  $scope.save = function(activity){
-    $scope.activities.$save(activity);
-  }
-
-  $scope.remove = function(activity) {
-    $scope.activities.$remove(activity);
-  }
-
+app.controller('formActivitiesCtrl',['$scope','Actividades',function($scope,Actividades) {
+  $scope.actividades = Actividades;
 }]);

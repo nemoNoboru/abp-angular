@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="bower_components/remodal/dist/remodal.css" />
+		<link rel="stylesheet" href="bower_components/remodal/dist/remodal-default-theme.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -99,8 +101,32 @@
 
 			</div>
 
+			<div ng-controller='formActivitiesCtrl as $ctrl' class="remodal" data-remodal-id="modalActivities"
+			data-remodal-options="hashTracking: false, closeOnOutsideClick: true">
+			<h1>Modificando Actividad</h1>
+			<p>
+				<div class='row uniform'>
+        <div class='6u 12u$(xsmall)'><input type='text' ng-model='actividades.activo.nombre' placeholder="Nombre de la actividad"/></div>
+        <div class='12u'><input type='text' ng-model='actividades.activo.descripcion' placeholder="Descripcion"/></div>
+        <div class='12u'><input type='text' ng-model='actividades.activo.lugar' placeholder="Lugar"/></div>
+        <div class='6u 12u$(xsmall)'><input type='text' ng-model='actividades.activo.plazas' placeholder="Numero de plazas"/></div>
+        <div class='6u 12u$(xsmall)'><input type='text' ng-model='actividades.activo.fecha' placeholder="Fecha"/></div>
+        </div>
+			</p>
+			<br>
+			<button ng-click='actividades.activities.$save(actividades.activo)' data-remodal-action="confirm" class="remodal-confirm">OK</button>
+		</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script>
+				window.REMODAL_GLOBALS = {
+				  DEFAULTS: {
+				    hashTracking: false
+				  }
+				};
+			</script>
+			<script src='bower_components/remodal/dist/remodal.js'></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->

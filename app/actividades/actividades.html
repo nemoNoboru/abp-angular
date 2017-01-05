@@ -14,7 +14,7 @@
         <div class='6u 12u$(xsmall)'><input type='text' ng-model='n.fecha' placeholder="Fecha"/></div>
         </div>
         <hr/>
-        <button ng-click='addActivity(n)'>Guardar</button>
+        <button ng-click='actividades.activities.$add(n)'>Guardar</button>
       </div>
       <hr/>
     <div class="table-wrapper">
@@ -31,14 +31,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat='a in activities'>
+          <tr ng-repeat='a in actividades.activities'>
             <td>{{a.nombre}}</td>
             <td>{{a.descripcion}}</td>
             <td>{{a.lugar}}</td>
             <td>{{a.plazas}}</td>
             <td>{{a.fecha}}</td>
-            <td><button ng-click='remove(a)'>Modificar <i class="fa fa-pencil" aria-hidden="true"></i></button></td>
-            <td><button ng-click='remove(a)'>Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+            <td><a data-remodal-target="modalActivities" ng-click='setActivo(a) '>Modificar <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+            <td><button ng-click='actividades.activities.$remove(a)'>Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
           </tr>
           <!-- TODO crear aqui un modal para modficar la actividad -->
         </tbody>
