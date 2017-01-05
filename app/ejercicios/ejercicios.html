@@ -1,0 +1,42 @@
+<section ng-controller='ejercicioCtrl as $ctrl' >
+  <div class="content">
+    <header>
+      <h1>Gestion de ejercicios</h1>
+    </header>
+    <div><button ng-click='fthide()'>Crear Ejercicio <i class="fa fa-plus-square-o" aria-hidden="true"></i> </button></div>
+      <div ng-hide='thide'>
+        <hr/>
+        <div class='row uniform'>
+        <div class='6u 12u$(xsmall)'><input type='text' ng-model='n.nombre' placeholder="Nombre del ejercicio"/></div>
+        <div class='12u'><input type='text' ng-model='n.descripcion' placeholder="Descripcion"/></div>
+        <div class='6u 12u$(xsmall)'><input type='text' ng-model='n.peso' placeholder="Peso"/></div>
+        <div class='6u 12u$(xsmall)'><input type='text' ng-model='n.repeticiones' placeholder="Repeticiones"/></div>
+        </div>
+        <hr/>
+        <button ng-click='ejercicio.lista.$add(n)'>Guardar</button>
+      </div>
+      <hr/>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Peso</th>
+            <th>Repeticiones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='a in ejercicio.lista'>
+            <td>{{a.nombre}}</td>
+            <td>{{a.descripcion}}</td>
+            <td>{{a.peso}}</td>
+            <td>{{a.repeticiones}}</td>
+            <td><a data-remodal-target="modalEjercicios" ng-click='setActivo(a) '>Modificar <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+            <td><button ng-click='ejercicio.lista.$remove(a)'>Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
