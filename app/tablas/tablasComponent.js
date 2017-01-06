@@ -1,4 +1,5 @@
-app.controller('tablaCtrl',['$scope','$firebaseArray','$firebaseObject',function($scope,$firebaseArray,$firebaseObject) {
+app.controller('tablaCtrl',['$scope','$firebaseArray','$firebaseObject','modalUtil',function($scope,$firebaseArray,$firebaseObject,modalUtil) {
+
   var ref = firebase.database().ref().child('Exercises');
   $scope.ejercicios = $firebaseArray(ref);
 
@@ -7,9 +8,16 @@ app.controller('tablaCtrl',['$scope','$firebaseArray','$firebaseObject',function
   ref = firebase.database().ref().child('Tables');
   $scope.tablas = $firebaseArray(ref);
 
+  // anadimos una nueva tabla
+  $scope.addTabla = function(t) {
+    $scope.tablas.$add(t);
+    modalUtil.ok();
+  }
+
   // borramos una tabla dada la ID pasada
   $scope.deleteTable = function(id) {
     $firebaseObject(firebase.database().ref().child('Tables').child(id)).$remove();
+    modalUtil.ok();
   }
 
   // agregamos al array llamado ejercicios dentro de una estancia seleccionada de tables

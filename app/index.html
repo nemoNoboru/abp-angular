@@ -133,6 +133,22 @@
 		<button ng-click='ejercicio.lista.$save(ejercicio.activo)' data-remodal-action="confirm" class="remodal-confirm">OK</button>
 	</div>
 
+	<div class="remodal" data-remodal-id="ok"
+	data-remodal-options="hashTracking: false, closeOnOutsideClick: true">
+	<h1>OK</h1>
+	<p>Operacion realizada correctamente</p>
+	<br>
+	<button ng-click='ejercicio.lista.$save(ejercicio.activo)' data-remodal-action="confirm" class="remodal-confirm">OK</button>
+	</div>
+
+	<div class="remodal" data-remodal-id="error"
+	data-remodal-options="hashTracking: false, closeOnOutsideClick: true">
+	<h1>Hubo un error procesando su peticion</h1>
+	<p> Disculpe las molestias </p>
+	<br>
+	<button ng-click='ejercicio.lista.$save(ejercicio.activo)' data-remodal-action="confirm" class="remodal-confirm">OK</button>
+	</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script>
@@ -154,6 +170,7 @@
 			<script src="actividades/actividadesComponent.js"></script>
 			<script src="ejercicios/ejercicioComponent.js"></script>
 			<script src="tablas/tablasComponent.js"></script>
+			<script src="modalUtil.js"></script>
 
 	</body>
 </html>
