@@ -1,0 +1,32 @@
+<section ng-controller='misactividadesCtrl as $ctrl' >
+  <div class="content">
+    <header>
+      <h1>Mis Actividades</h1>
+    </header>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Lugar</th>
+            <th>Plazas</th>
+            <th>Fecha</th>
+            <th>Subscribirse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='a in activities'>
+            <td>{{a.nombre}}</td>
+            <td>{{a.descripcion}}</td>
+            <td>{{a.lugar}}</td>
+            <td>{{a.plazas}}</td>
+            <td>{{a.fecha}}</td>
+            <td ng-hide='a.is'><button ng-click='subscribe(a)'>Subscribirse<i class="fa fa-plus-o" aria-hidden="true"></i></button></td>
+              <td ng-show='a.is'><button ng-click='unsuscribe(a)'>Desubscribirse<i class="fa fa-plus-o" aria-hidden="true"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

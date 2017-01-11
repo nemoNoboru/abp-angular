@@ -18,6 +18,7 @@
             <th>Edad</th>
             <th>Peso</th>
             <th>Tipo</th>
+            <th>Tabla de ejercicios</th>
             <th>Eliminar</th>
           </tr>
         </thead>
@@ -34,6 +35,9 @@
                 <option value="TRAINER"> Entrenador </option>
               </select>
             </div></td>
+            <td><div class='select-wrapper'><select ng-model='user.table' ng-change='save(user)'>
+              <option ng-repeat='a in tablas' value="{{a.$id}}">{{a.nombre}}</option>
+            </select></div></td>
             <td><button ng-click='remove(user)'>Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
           </tr>
         </tbody>

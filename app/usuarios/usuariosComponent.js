@@ -23,6 +23,9 @@ app.controller('usuariosCtrl',["$scope","$firebaseObject","$firebaseArray","$fir
   });
   };
 
+  ref = firebase.database().ref().child('Tables');
+  $scope.tablas = $firebaseArray(ref);
+
   $scope.save = function(user){
     $scope.users.$save(user);
   };
