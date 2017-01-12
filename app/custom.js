@@ -26,6 +26,10 @@ app.config(function($routeProvider){
     templateUrl: 'actividades/actividades.html',
     controller: 'actividadesCtrl'
   })
+  .when('/misentrenamientos',{
+    templateUrl: 'misEntrenamientos/misentrenamientos.html',
+    controller: 'mentrenamientosCtrl'
+  })
   .when('/misactividades',{
     templateUrl: 'misActividades/misactividades.html',
     controller: 'misactividadesCtrl'

@@ -1,0 +1,47 @@
+<section ng-controller='ejercicioCtrl as $ctrl' >
+  <div class="content">
+    <header>
+      <h1>Mis entrenamientos</h1>
+    </header>
+        <input ng-model='name' placeholder="nombre de la sesion">
+        <br/>
+        <button ng-click='createSession(name)'>Crear Nueva sesion </button>
+    <hr/>
+    <h2>Selecionar la sesion a monitorizar</h2>
+    <div class="6u 12u$(small)">
+
+    </div>
+    <select ng-model='active' ng-change='changeSession(active)'>
+      <option ng-repeat='a in sesiones' value="{{a.$id}}">{{a.name}}</option>
+    </select>
+    <br ng-show='active'/>
+
+    <hr/>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Peso</th>
+            <th>Repeticiones</th>
+            <th>Hecho</th>
+            <th>Comentarios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='a in ejercicios'>
+            <td>{{a.nombre}}</td>
+            <td>{{a.descripcion}}</td>
+            <td>{{a.peso}}</td>
+            <td>{{a.repeticiones}}</td>
+            <td>  <input type="checkbox" ng-model='a.hecho'>
+                  <label for="demo-copy">Hecho</label></td>
+            <td><input type='text' ng-model='a.comentario'></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
