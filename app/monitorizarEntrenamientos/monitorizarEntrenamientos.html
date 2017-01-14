@@ -1,0 +1,50 @@
+<section ng-controller='monitorizarCtrl as $ctrl'>
+  <header>
+    <h1> monitorizar entrenamientos </h1>
+  </header>
+
+  <h2>Selecionar usuario a monitorizar</h2>
+  <div class="select-wrapper">
+  <select ng-model='ausuario' ng-change='reloadSesiones(ausuario)'>
+    <option ng-repeat='u in usuarios' value="{{u.$id}}">{{u.nombre}}</option>
+  </select>
+  </div>
+  <hr/>
+
+  <h2>Selecionar sesion de entrenamiento a monitorizar</h2>
+  <div class="select-wrapper">
+  <select ng-model='asesion' ng-change='reloadEjercicios(asesion)'>
+    <option ng-repeat='s in sesiones' value="{{s.$id}}">{{s.name}}</option>
+  </select>
+  </div>
+
+  <hr/>
+  <h2>{{asesion.name}}</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Peso</th>
+          <th>Repeticiones</th>
+          <th>Hecho</th>
+          <th>Comentarios</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='a in ejercicios'>
+          <td style="text-align:center; vertical-align: middle;">{{a.nombre}}</td>
+          <td style="text-align:center; vertical-align: middle;">{{a.descripcion}}</td>
+          <td style="text-align:center; vertical-align: middle;">{{a.peso}}</td>
+          <td style="text-align:center; vertical-align: middle;">{{a.repeticiones}}</td>
+          <td style="text-align:center; vertical-align: middle;"><div class='row uniform'>
+            <div class="6u 12u$(small)">  <input type="checkbox" disabled ng-model='a.hecho' ng-change='ejercicios.$save(a)' id="demo-copy" name="demo-copy">
+          <label for="demo-copy">Hecho</label></div></div></td>
+          <td  style="text-align:center; vertical-align: middle;"><div class='row uniform'><div class="8u 12u$(small)"><input type='text' disabled ng-model='a.comentario' ng-change='ejercicios.$save(a)'></div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>

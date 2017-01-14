@@ -45,6 +45,15 @@ app.config(function($routeProvider){
       }]
     }
   })
+  .when('/monitorizarEntrenamientos',{
+    templateUrl: 'monitorizarEntrenamientos/monitorizarEntrenamientos.html',
+    controller: 'monitorizarCtrl',
+    resolve: {
+      "currentAuth": ["Auth", function(Auth) {
+        return Auth.$requireSignIn();
+      }]
+    }
+  })
   .when('/ejercicios',{
     templateUrl: 'ejercicios/ejercicios.html',
     controller: 'ejercicioCtrl',
