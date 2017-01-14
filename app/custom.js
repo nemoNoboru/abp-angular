@@ -10,6 +10,19 @@ app.run(["$rootScope", "$location", function($rootScope, $location) {
   });
 }]);
 
+app.service('berus',['Auth','$location','$firebaseObject',function(Auth,$location,$firebaseObject) {
+  this.check = function (type) {
+    var ref = firebase.database().ref('users').child(Auth.$getAuth().uid)
+    $firebaseObject(ref).$loaded(function (user) {
+      console.log('cheking')
+      console.log(user)
+      if(user.tipo != type){
+        $location.path('/privilegiosError');
+      }
+    })
+  }
+}]);
+
 app.factory("Auth", ["$firebaseAuth",
   function($firebaseAuth) {
     return $firebaseAuth();

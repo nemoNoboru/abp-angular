@@ -8,7 +8,9 @@ app.service('Ejercicio',['$firebaseArray',function($firebaseArray){
 }]);
 
 
-app.controller('ejercicioCtrl',["$scope","Ejercicio",function($scope,Ejercicio) {
+app.controller('ejercicioCtrl',["$scope","Ejercicio","berus",function($scope,Ejercicio,berus) {
+
+  berus.check('PEF')
 
   $scope.ejercicio = Ejercicio;
   $scope.thide = true;
