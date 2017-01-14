@@ -3,7 +3,7 @@ app.controller('perfilCtrl',["$scope","Auth","$firebaseObject",function($scope,A
   var ref = firebase.database().ref().child('users').child(Auth.$getAuth().uid);
   var o = $firebaseObject(ref);
   o.$bindTo($scope, "O");
-  $scope.edit = false;
+  $scope.edit = true;
   $scope.tEdit = function(){
     $scope.edit = !$scope.edit;
   };

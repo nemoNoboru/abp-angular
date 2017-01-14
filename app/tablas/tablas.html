@@ -14,17 +14,21 @@
   <hr/>
 
   <h2>Selecionar tabla a modificar</h2>
+  <div class="select-wrapper">
   <select ng-model='active' ng-change='reload(active)'>
     <option ng-repeat='a in tablas' value="{{a.$id}}">{{a.nombre}}</option>
   </select>
+  </div>
   <br ng-show='active'/>
   <button ng-show='active' ng-click='deleteTable(active)'>Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></button>
   <hr/>
 
   <h2>Selecionar ejercicio a anadir</h2>
+  <div class="select-wrapper">
   <select ng-model='aejercicio'>
     <option ng-repeat='a in ejercicios' value="{{a.$id}}">{{a.nombre}}</option>
   </select>
+  </div>
   <br/>
   <button ng-click='agregar(aejercicio)'>Anadir ejercicio</button>
 

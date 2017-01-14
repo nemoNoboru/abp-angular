@@ -5,8 +5,12 @@
     </header>
     <div><button ng-click='tcrearUsuario()'>Crear usuario <i class="fa fa-plus-square-o" aria-hidden="true"></i> </button></div>
       <div ng-hide='tuser'>
-        <input type='text' ng-model='newuserEmail' placeholder="Email del nuevo usuario"/>
-        <input type='text' ng-model='newuserPass' placeholder="Pass del nuevo usuario"/>
+        <hr/>
+        <div class="row uniform">
+        <div class='12u'><input type='text' ng-model='newuserEmail' placeholder="Email del nuevo usuario"/></div>
+        <div class='12u'><input type='text' ng-model='newuserPass' placeholder="Pass del nuevo usuario"/></div>
+        </div>
+        <hr/>
         <button ng-click='crearUsuario()'>Guardar</button>
       </div>
       <hr/>
@@ -35,7 +39,7 @@
                 <option value="TRAINER"> Entrenador </option>
               </select>
             </div></td>
-            <td><div class='select-wrapper'><select ng-model='user.table' ng-change='save(user)'>
+            <td><div class='select-wrapper'><select ng-disabled='user.tipo == "TDU"' ng-model='user.table' ng-change='save(user)'>
               <option ng-repeat='a in tablas' value="{{a.$id}}">{{a.nombre}}</option>
             </select></div></td>
             <td><button ng-click='remove(user)'>Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></button></td>

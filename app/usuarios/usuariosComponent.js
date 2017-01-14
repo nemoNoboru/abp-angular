@@ -27,6 +27,15 @@ app.controller('usuariosCtrl',["$scope","$firebaseObject","$firebaseArray","$fir
   $scope.tablas = $firebaseArray(ref);
 
   $scope.save = function(user){
+    if(user.tipo == 'TDU'){
+      console.log('user is tdu')
+      $scope.tablas.forEach(function (i) {
+        if(i.nombre == 'TDU'){
+          user.table = i.$id;
+          console.log('setting table');
+        }
+      })
+    }
     $scope.users.$save(user);
   };
 

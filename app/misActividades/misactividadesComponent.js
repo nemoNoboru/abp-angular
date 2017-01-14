@@ -23,6 +23,11 @@ app.controller('misactividadesCtrl',['Auth','$scope','$firebaseArray','User',fun
   }
 
   $scope.subscribe = function (activity) {
+    if(activity.plazas < 1){
+      return;
+    }
+    activity.plazas = activity.plazas -1
+    $scope.activities.$save(activity);
     var ref = firebase.database().ref().child('activities').child(activity.$id).child('participants');
     var a = $firebaseArray(ref);
     console.log(a);
@@ -30,6 +35,8 @@ app.controller('misactividadesCtrl',['Auth','$scope','$firebaseArray','User',fun
   }
 
   $scope.unsuscribe = function (activity) {
+    activity.plazas = activity.plazas +1
+    $scope.activities.$save(activity);
     var ref = firebase.database().ref().child('activities').child(activity.$id).child('participants');
     var a = $firebaseArray(ref).$loaded(function (a) {
       var toRev = null;
