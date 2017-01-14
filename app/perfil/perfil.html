@@ -3,6 +3,7 @@
   <div class="content">
     <header>
       <h1>Mi Perfil</h1> <button ng-click='tEdit()'>Editar <i class="fa fa-pencil" aria-hidden="true"></i></button>
+    </header>
       <div class="row uniform">
         <div class="6u 12u$(xsmall)">
           <h2>Nombre: {{O.nombre}}</h2>
@@ -17,6 +18,6 @@
           <input ng-hide='edit' type="text"  ng-model='O.edad' placeholder="Edad" />
         </div>
       </div><br/>
-    </header>
+    <a href='#login' ng-click="signOut()">Logout</a>
   </div>
 </section>

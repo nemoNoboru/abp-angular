@@ -1,7 +1,7 @@
-app.controller('misactividadesCtrl',['$scope','$firebaseArray','User',function ($scope,$firebaseArray,User) {
+app.controller('misactividadesCtrl',['Auth','$scope','$firebaseArray','User',function (Auth,$scope,$firebaseArray,User) {
   var ref = firebase.database().ref().child('activities');
   var self = this;
-  var myid = 'adsfasdfasdf';
+  var myid = Auth.$getAuth().uid;
   $scope.activities = $firebaseArray(ref)
   $scope.activities.$watch(function () {
     $scope.activities.forEach(function (i) {

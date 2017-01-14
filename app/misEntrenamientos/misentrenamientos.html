@@ -3,9 +3,7 @@
     <header>
       <h1>Mis entrenamientos</h1>
     </header>
-        <input ng-model='name' placeholder="nombre de la sesion">
-        <br/>
-        <button ng-click='createSession(name)'>Crear Nueva sesion </button>
+      <button ng-click='createSession()'>Crear Nueva sesion </button>
     <hr/>
     <h2>Selecionar la sesion a monitorizar</h2>
     <div class="6u 12u$(small)">
@@ -32,13 +30,14 @@
         </thead>
         <tbody>
           <tr ng-repeat='a in ejercicios'>
-            <td>{{a.nombre}}</td>
-            <td>{{a.descripcion}}</td>
-            <td>{{a.peso}}</td>
-            <td>{{a.repeticiones}}</td>
-            <td>  <input type="checkbox" ng-model='a.hecho'>
-                  <label for="demo-copy">Hecho</label></td>
-            <td><input type='text' ng-model='a.comentario'></td>
+            <td style="text-align:center; vertical-align: middle;">{{a.nombre}}</td>
+            <td style="text-align:center; vertical-align: middle;">{{a.descripcion}}</td>
+            <td style="text-align:center; vertical-align: middle;">{{a.peso}}</td>
+            <td style="text-align:center; vertical-align: middle;">{{a.repeticiones}}</td>
+            <td style="text-align:center; vertical-align: middle;"><div class='row uniform'>
+              <div class="6u 12u$(small)">  <input type="checkbox" ng-model='a.hecho' ng-change='ejercicios.$save(a)' id="demo-copy" name="demo-copy">
+            <label for="demo-copy">Hecho</label></div></div></td>
+            <td  style="text-align:center; vertical-align: middle;"><div class='row uniform'><div class="8u 12u$(small)"><input type='text' ng-model='a.comentario' ng-change='ejercicios.$save(a)'></div></div></td>
           </tr>
         </tbody>
       </table>

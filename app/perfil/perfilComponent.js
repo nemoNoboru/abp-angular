@@ -1,9 +1,14 @@
-app.controller('perfilCtrl',["$scope","User","$firebaseObject",function($scope,User,$firebaseObject){
-  var ref = firebase.database().ref().child('users').child(User.user.uid);
+app.controller('perfilCtrl',["$scope","Auth","$firebaseObject",function($scope,Auth,$firebaseObject){
+  console.log(Auth.$getAuth());
+  var ref = firebase.database().ref().child('users').child(Auth.$getAuth().uid);
   var o = $firebaseObject(ref);
   o.$bindTo($scope, "O");
   $scope.edit = false;
   $scope.tEdit = function(){
     $scope.edit = !$scope.edit;
   };
+
+  $scope.signOut = function () {
+    Auth.$signOut();
+  }
 }]);
