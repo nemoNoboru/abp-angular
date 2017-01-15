@@ -1,4 +1,6 @@
-app.controller('usuariosCtrl',["$scope","$firebaseObject","$firebaseArray","$firebaseAuth",function($scope,$firebaseObject,$firebaseArray,$firebaseAuth){
+app.controller('usuariosCtrl',["$scope","$firebaseObject","$firebaseArray","$firebaseAuth","berus",function($scope,$firebaseObject,$firebaseArray,$firebaseAuth,berus){
+  berus.check('ADMIN')
+
   var ref = firebase.database().ref().child('users');
   $scope.users = $firebaseArray(ref);
 

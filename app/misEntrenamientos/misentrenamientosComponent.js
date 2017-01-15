@@ -1,7 +1,4 @@
 app.controller('mentrenamientosCtrl',['Auth','$scope','$firebaseObject','$firebaseArray','$filter','modalUtil',function (Auth,$scope,$firebaseObject,$firebaseArray,$filter,ModalUtil) {
-  // conseguimos los ejercicios de la tabla de ejercicios que le corresponde al usuario
-  var ref;
-
 
   // conseguimos sus sesiones
   var user_id = Auth.$getAuth().uid;

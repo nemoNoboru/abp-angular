@@ -40,6 +40,9 @@ app.config(function($routeProvider){
       }]
     }
   })
+  .when('/privilegiosError',{
+    templateUrl: 'privilegiosError.html'
+  })
   .when('/perfil',{
     templateUrl: 'perfil/perfil.html',
     controller: 'perfilCtrl',
@@ -69,7 +72,7 @@ app.config(function($routeProvider){
   })
   .when('/ejercicios',{
     templateUrl: 'ejercicios/ejercicios.html',
-    controller: 'ejercicioCtrl',
+    controller: 'eCtrl',
     resolve: {
       "currentAuth": ["Auth", function(Auth) {
         return Auth.$requireSignIn();

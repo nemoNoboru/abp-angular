@@ -1,4 +1,5 @@
-app.controller('monitorizarCtrl',['$scope','$firebaseArray',function ($scope,$firebaseArray) {
+app.controller('monitorizarCtrl',['$scope','$firebaseArray','berus',function ($scope,$firebaseArray,berus) {
+  berus.check('TRAINER')
   var usuarios = firebase.database().ref().child('users')
   $scope.usuarios = $firebaseArray(usuarios)
 

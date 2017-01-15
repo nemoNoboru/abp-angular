@@ -1,5 +1,5 @@
-app.controller('tablaCtrl',['$scope','$firebaseArray','$firebaseObject','modalUtil',function($scope,$firebaseArray,$firebaseObject,modalUtil) {
-
+app.controller('tablaCtrl',['$scope','$firebaseArray','$firebaseObject','modalUtil','berus',function($scope,$firebaseArray,$firebaseObject,modalUtil,berus) {
+  berus.check('TRAINER')
   var ref = firebase.database().ref().child('Exercises');
   $scope.ejercicios = $firebaseArray(ref);
 
