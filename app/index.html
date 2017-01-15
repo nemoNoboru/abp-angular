@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+			<link rel="stylesheet" href="assets/css/banner.css" />
 		<link rel="stylesheet" href="bower_components/remodal/dist/remodal.css" />
 		<link rel="stylesheet" href="bower_components/remodal/dist/remodal-default-theme.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -68,16 +69,17 @@
 									<header class="major">
 										<h2>Menu</h2>
 									</header>
-									<ul>
-										<li><a href='#perfil'>Mi Perfil</a></li>
-										<li><a href="#usuarios">Gestion de Usuarios</a></li>
-										<li><a href="#actividades">Gestion de Actividades</a></li>
-										<li><a href="#ejercicios">Gestion de Ejercicios</a></li>
-										<li><a href="#tablas">Gestion de Tablas de ejercicios</a></li>
-										<li><a href="#misentrenamientos">Mis entrenamientos</a></li>
-										<li><a href="#misactividades">Mis actividades</a></li>
-										<li><a href="#monitorizarEntrenamientos">Monitorizar entrenamientos</a></li>
-
+									<ul ng-controller='navbarCtrl as $ctrl'>
+										<li><a href="#/">Home</a></li>
+										<li ng-hide='user'><a href='#login'>Login</a></li>
+										<li ng-show='user'><a href='#perfil'>Mi Perfil</a></li>
+										<li ng-show='user.tipo=="ADMIN"'><a href="#usuarios">Gestion de Usuarios</a></li>
+										<li ng-show='user.tipo=="TRAINER"'><a href="#actividades">Gestion de Actividades</a></li>
+										<li ng-show='user.tipo=="TRAINER"'><a href="#ejercicios">Gestion de Ejercicios</a></li>
+										<li ng-show='user.tipo=="TRAINER"'><a href="#tablas">Gestion de Tablas de ejercicios</a></li>
+										<li ng-show='user.tipo=="TRAINER"'><a href="#monitorizarEntrenamientos">Monitorizar entrenamientos</a></li>
+										<li ng-show='user'><a href="#misentrenamientos">Mis entrenamientos</a></li>
+										<li ng-show='user'><a href="#misactividades">Mis actividades</a></li>
 									</ul>
 								</nav>
 
@@ -86,12 +88,10 @@
 									<header class="major">
 										<h2>Informacion de contacto</h2>
 									</header>
-									<p>Polideportivo Uvigo</p>
 									<ul class="contact">
-										<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
-										<li class="fa-phone">(000) 000-0000</li>
-										<li class="fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
+										<li class="fa-envelope-o"><a href="#">depor-ou@uvigo.es</a></li>
+										<li class="fa-phone">988 387 198</li>
+										<li class="fa-home">Pavillón Universitario <br/>Campus A Lonia (Ourense)</li>
 									</ul>
 								</section>
 
@@ -176,6 +176,7 @@
 			<script src="misActividades/misactividadesComponent.js"></script>
 			<script src="misEntrenamientos/misentrenamientosComponent.js"></script>
 			<script src="monitorizarEntrenamientos/monitorizarComponent.js"></script>
+			<script src="navbarcontroller.js"></script>
 			<script src="modalUtil.js"></script>
 
 	</body>

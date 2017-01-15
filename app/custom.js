@@ -61,6 +61,9 @@ app.config(function($routeProvider){
       }]
     }
   })
+  .when('/',{
+    templateUrl: 'home.html',
+  })
   .when('/monitorizarEntrenamientos',{
     templateUrl: 'monitorizarEntrenamientos/monitorizarEntrenamientos.html',
     controller: 'monitorizarCtrl',
